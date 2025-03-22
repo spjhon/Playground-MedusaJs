@@ -30,10 +30,14 @@ import {
   export const createBrandStep = createStep(
     "create-brand-step",
     async (input: CreateBrandStepInput, { container }) => {
+
+
       const brandModuleService: BrandModuleService = container.resolve(
         BRAND_MODULE
       )
-  
+      
+
+
 
       //esta es la funcion de compensacion que lo que hace es revertir lo que se ha hecho si en algum momento de los spteps
       // sale un error
@@ -41,16 +45,15 @@ import {
         const brandModuleService: BrandModuleService = container.resolve(
           BRAND_MODULE
         )
-    
         await brandModuleService.deleteBrands(id)
-
-        console.log("se ha ejecutado el step")
       }
 
       //No olvidar que el createBrands es una funcion automatica que se crea al crear el service.ts y utiliza las
       //funciones factory de medusa.
       const brand = await brandModuleService.createBrands(input)
-  
+
+      console.log("A continuacion, el container:", container.registrations)
+
       return new StepResponse(brand, brand.id)
     }
   )
@@ -69,7 +72,7 @@ import {
     (input: CreateBrandWorkflowInput) => {
       const brand = createBrandStep(input)
   
-    console.log("se ha creado una marca")
+    
       return new WorkflowResponse(brand)
     }
   )
