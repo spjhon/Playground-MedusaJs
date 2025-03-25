@@ -4,16 +4,16 @@ import { createBrandWorkflow } from "../../../workflows/create-brand";
 import { z } from "zod"
 import { PostAdminCreateBrand } from "./validators"
 
-
-//ESTE TIPADO YA NO IRIA SINO QUE SE UTILIZARIA ZOD PARA LA VALIDACION DE TYPES
+/*
+ESTE TIPADO YA NO IRIA SINO QUE SE UTILIZARIA ZOD PARA LA VALIDACION DE TYPES
 type PostAdminCreateBrandType = {
   name: string;
 };
-
-
-/*
-type PostAdminCreateBrandType = z.infer<typeof PostAdminCreateBrand>
 */
+
+
+type PostAdminCreateBrandType = z.infer<typeof PostAdminCreateBrand>
+
 
 export const POST = async (
   req: MedusaRequest<PostAdminCreateBrandType>,
@@ -31,3 +31,18 @@ console.log("llamada Api")
 
   res.json({ brand: result });
 };
+
+
+export const GET = async (
+  req: MedusaRequest,
+  res: MedusaResponse
+) => {
+  const query = req.scope.resolve("query")
+  
+  const { data: brands } = await query.graph({
+    entity: "brand",
+    fields: ["*", "products.*"],
+  })
+
+  res.json({ brands })
+}

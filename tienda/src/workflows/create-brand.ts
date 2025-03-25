@@ -37,8 +37,6 @@ import {
       )
       
 
-
-
       //esta es la funcion de compensacion que lo que hace es revertir lo que se ha hecho si en algum momento de los spteps
       // sale un error
       async (id: string, { container }) => {
