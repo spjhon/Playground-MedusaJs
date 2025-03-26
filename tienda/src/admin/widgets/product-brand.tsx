@@ -11,15 +11,17 @@ type AdminProductBrand = AdminProduct & {
   }
 }
 
-const ProductBrandWidget = ({ 
-  data: product,
-}: DetailWidgetProps<AdminProduct>) => {
+const ProductBrandWidget = ({data: product}: DetailWidgetProps<AdminProduct>) => {
+
+
   const { data: queryResult } = useQuery({
     queryFn: () => sdk.admin.product.retrieve(product.id, {
       fields: "+brand.*",
     }),
     queryKey: [["product", product.id]],
   })
+
+
   const brandName = (queryResult?.product as AdminProductBrand)?.brand?.name
 
   return (
