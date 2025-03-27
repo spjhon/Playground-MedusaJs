@@ -57,6 +57,10 @@ Aquí se hace una consulta a la base de datos usando el método graph(), que:
 - Consulta la entidad "brand", lo que significa que está obteniendo datos de la tabla brands en la base de datos.
 - Usa ...req.queryConfig, lo que permite incluir filtros, paginación y otros parámetros de la consulta que vengan en la solicitud req.
   */
+
+ /*
+En cuanto al =, Si metadata no existiera en la respuesta, se usa {} para evitar errores de destructuración.
+ */
   const { data: brands, metadata: { count, take, skip } = {},} = await query.graph({entity: "brand",...req.queryConfig,})
 
   res.json({ 
