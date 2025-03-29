@@ -18,21 +18,16 @@ export type CreateBrandStepInput = {
   name: string;
 };
 
+
+
 //este es un step, no es el workflow o la aplicacion de es, es el step que utiliza servicios creados en los modulos po rmedio +
 //del modelo de datos en brand.ts dentro de models y los servicos integrados en services.
 export const createBrandStep = createStep(
   "create-brand-step",
-  async (input: CreateBrandStepInput, { container }) => {
-    const brandModuleService: BrandModuleService =
-      container.resolve(BRAND_MODULE);
 
-    //esta es la funcion de compensacion que lo que hace es revertir lo que se ha hecho si en algum momento de los spteps
-    // sale un error
-    async (id: string, { container }) => {
-      const brandModuleService: BrandModuleService =
-        container.resolve(BRAND_MODULE);
-      await brandModuleService.deleteBrands(id);
-    };
+  async (input: CreateBrandStepInput, { container }) => {
+
+    const brandModuleService: BrandModuleService = container.resolve(BRAND_MODULE);
 
     //No olvidar que el createBrands es una funcion automatica que se crea al crear el service.ts y utiliza las
     //funciones factory de medusa.
@@ -41,8 +36,19 @@ export const createBrandStep = createStep(
     console.log("A continuacion, el container:", container.registrations);
 
     return new StepResponse(brand, brand.id);
-  }
-);
+
+  },
+
+
+//esta es la funcion de compensacion que lo que hace es revertir lo que se ha hecho si en algum momento de los spteps
+    // sale un error
+    async (id: string, { container }) => {
+      const brandModuleService: BrandModuleService = container.resolve(BRAND_MODULE);
+      await brandModuleService.deleteBrands(id);
+    }
+
+
+)
 
 
 
@@ -66,13 +72,17 @@ export const createBrandWorkflow = createWorkflow(
     const brand = createBrandStep(input);
 
 
-    
+    //este es el emisor de eventos que va a escuchar el subscriber para hacer la operacion async al cms
     emitEventStep({
       eventName: "brand.created",
       data: {
         id: brand.id,
       },
     });
+
+
+
+
     return new WorkflowResponse(brand);
   }
 );
