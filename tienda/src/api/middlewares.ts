@@ -17,11 +17,15 @@ export const GetBrandsSchema = createFindParams()
 export default defineMiddlewares({
   routes: [
     {
+      //este es el middleware para hacer validators a lo que llega en este post desde el admin api
+    
       matcher: "/admin/brands",
       method: "POST",
       middlewares: [validateAndTransformBody(PostAdminCreateBrand)],
     },
     {
+
+      //este es el middleware para hacer validators a lo que llega en este post desde el store api
       matcher: "/store/brands",
       method: "POST",
       middlewares: [validateAndTransformBody(PostAdminCreateBrand)],
@@ -33,6 +37,9 @@ export default defineMiddlewares({
         brand_id: z.string().optional(),
       },
     },
+
+    //ojo, curiosamente desde la peticion se puede agregar un "fields" para que con unos params en el query de la ruta de peticion
+    //se especifique que campos que tengan lins se adicionen a la peticion
     {
       matcher: "/admin/brands",
       method: "GET",
@@ -50,5 +57,7 @@ export default defineMiddlewares({
         ),
       ],
     },
+
+
   ],
 });

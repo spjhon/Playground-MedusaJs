@@ -27,6 +27,7 @@ export const createBrandStep = createStep(
 
   async (input: CreateBrandStepInput, { container }) => {
 
+    //aqui estamos haciendo una instancia del contanier para obtener las factory functions del modulo brand a travez de su servicio
     const brandModuleService: BrandModuleService = container.resolve(BRAND_MODULE);
 
     //No olvidar que el createBrands es una funcion automatica que se crea al crear el service.ts y utiliza las
@@ -34,7 +35,7 @@ export const createBrandStep = createStep(
     const brand = await brandModuleService.createBrands(input);
 
    //este consolelog si funciona, mientras que en el workflow no funciona
-    //console.log("este console log viene desde el step", input)
+    console.log("este console log viene desde el step", input)
 
     //entonces por obligacion hay que devolver el stepresponse que devuelve 
     return new StepResponse(brand, brand.id);
@@ -74,7 +75,7 @@ export const createBrandWorkflow = createWorkflow(
     const brand = createBrandStep(input);
 
     //este consolelog no funciona en el workflow, pero si en el step y en la api
-    //console.log("este console log viene desde el workflow createBrandWorkflow")
+    console.log("este console log viene desde el workflow createBrandWorkflow, NO DEBERIA VERSE")
 
     //este es el emisor de eventos que va a escuchar el subscriber para hacer la operacion async al cms
     emitEventStep({
