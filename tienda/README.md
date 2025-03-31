@@ -1,40 +1,8 @@
-<p align="center">
-  <a href="https://www.medusajs.com">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/59018053/229103275-b5e482bb-4601-46e6-8142-244f531cebdb.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://user-images.githubusercontent.com/59018053/229103726-e5b529a3-9b3f-4970-8a1f-c6af37f087bf.svg">
-    <img alt="Medusa logo" src="https://user-images.githubusercontent.com/59018053/229103726-e5b529a3-9b3f-4970-8a1f-c6af37f087bf.svg">
-    </picture>
-  </a>
-</p>
-<h1 align="center">
-  Medusa
-</h1>
-
-<h4 align="center">
-  <a href="https://docs.medusajs.com">Documentation</a> |
-  <a href="https://www.medusajs.com">Website</a>
-</h4>
-
-<p align="center">
-  Building blocks for digital commerce
-</p>
-<p align="center">
-  <a href="https://github.com/medusajs/medusa/blob/master/CONTRIBUTING.md">
-    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat" alt="PRs welcome!" />
-  </a>
-    <a href="https://www.producthunt.com/posts/medusa"><img src="https://img.shields.io/badge/Product%20Hunt-%231%20Product%20of%20the%20Day-%23DA552E" alt="Product Hunt"></a>
-  <a href="https://discord.gg/xpCwq3Kfn8">
-    <img src="https://img.shields.io/badge/chat-on%20discord-7289DA.svg" alt="Discord Chat" />
-  </a>
-  <a href="https://twitter.com/intent/follow?screen_name=medusajs">
-    <img src="https://img.shields.io/twitter/follow/medusajs.svg?label=Follow%20@medusajs" alt="Follow @medusajs" />
-  </a>
-</p>
+# README medusa backend starter
 
 ## Compatibility
 
-This starter is compatible with versions >= 2 of `@medusajs/medusa`. 
+This starter is compatible with versions >= 2 of `@medusajs/medusa`.
 
 ## Getting Started
 
@@ -48,15 +16,30 @@ Medusa is a set of commerce modules and tools that allow you to build rich, reli
 
 Learn more about [Medusa’s architecture](https://docs.medusajs.com/learn/introduction/architecture) and [commerce modules](https://docs.medusajs.com/learn/fundamentals/modules/commerce-modules) in the Docs.
 
-## Community & Contributions
+## Medusa Tips
 
-The community and core team are available in [GitHub Discussions](https://github.com/medusajs/medusa/discussions), where you can ask for support, discuss roadmap, and share ideas.
+### El src
 
-Join our [Discord server](https://discord.com/invite/medusajs) to meet other community members.
+- **admin**: Holds your admin dashboard's custom widgets and UI routes.
+- **api**: Holds your custom API routes that are added as endpoints in your Medusa application.
+- **jobs**: Holds your scheduled jobs that run at a specified interval during your Medusa application's runtime.
+- **links**: Holds your module links that build associations between data models of different modules.
+- **modules**: Holds your custom modules that implement custom business logic.
+- **scripts**: Holds your custom scripts to be executed using Medusa's CLI tool.
+- **subscribers**: Holds your event listeners that are executed asynchronously whenever an event is emitted.
+- **workflows**: Holds your custom flows that can be executed from anywhere in your application.
 
-## Other channels
+### Arquitectura minima para extender medusa
 
-- [GitHub Issues](https://github.com/medusajs/medusa/issues)
-- [Twitter](https://twitter.com/medusajs)
-- [LinkedIn](https://www.linkedin.com/company/medusajs)
-- [Medusa Blog](https://medusajs.com/blog/)
+In a common Medusa application, requests go through four layers in the stack. In order of entry, those are:
+
+1. **API Routes (HTTP)**: Our API Routes are the typical entry point. The Medusa server is based on Express.js, which handles incoming requests. It can also connect to a Redis database that stores the server session data.
+2. **Workflows**: API Routes consume workflows that hold the opinionated business logic of your application.
+3. **Modules**: Workflows use domain-specific modules for resource management.
+4. **Data store**: Modules query the underlying datastore, which is a PostgreSQL database in common cases.
+
+### Para extender a medusa
+
+- **Module Links**: Link data models of different modules without building direct dependencies, ensuring that the Medusa application integrates your modules without side effects.
+- **Workflow Hooks**: inject custom functionalities into a workflow at predefined points, called hooks. This allows you to perform custom actions as a part of a core workflow without hacky workarounds.
+- **Additional Data in API Routes**: Configure core API routes to accept request parameters relevant to your customizations. These parameters are passed to the underlying workflow's hooks, where you can manage your custom data as part of an existing flow.

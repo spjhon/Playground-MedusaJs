@@ -22,6 +22,11 @@ export default defineMiddlewares({
       middlewares: [validateAndTransformBody(PostAdminCreateBrand)],
     },
     {
+      matcher: "/store/brands",
+      method: "POST",
+      middlewares: [validateAndTransformBody(PostAdminCreateBrand)],
+    },
+    {
       matcher: "/admin/products",
       method: ["POST"],
       additionalDataValidator: {

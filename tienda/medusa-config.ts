@@ -14,7 +14,11 @@ module.exports = defineConfig({
     }
   },
   modules: [
+    
     {
+      //Este modulo es la forma de agregarlo a la configuracino y que se accione el BRAND-MODULE
+      //con sus respectivos servicios
+      //cuando se crea un modulo y se llega hasta aqui, es el punto perfecto para correr migrations
       resolve: "./src/modules/brand",
     },
     {

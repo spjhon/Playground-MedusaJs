@@ -6,5 +6,5 @@ class BrandModuleService extends MedusaService({
 }) {
 
 }
-//Aqui se crean unas funiones que luego se eredan cuando se invoa el BrandModuleService
+//Aqui se crean unas funiones que luego se heredan cuando se invoca el BrandModuleService
 export default BrandModuleService

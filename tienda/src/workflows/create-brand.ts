@@ -33,8 +33,10 @@ export const createBrandStep = createStep(
     //funciones factory de medusa.
     const brand = await brandModuleService.createBrands(input);
 
-    console.log("A continuacion, el container:", container.registrations);
+   //este consolelog si funciona, mientras que en el workflow no funciona
+    //console.log("este console log viene desde el step", input)
 
+    //entonces por obligacion hay que devolver el stepresponse que devuelve 
     return new StepResponse(brand, brand.id);
 
   },
@@ -56,6 +58,7 @@ export const createBrandStep = createStep(
 
 
 //estos son los types para el workflow
+//el poder de los workflow es que permite adiconar logica de tipo roll-back, retry, y mucho mas
 type CreateBrandWorkflowInput = {
   name: string;
 };
@@ -67,10 +70,11 @@ export const createBrandWorkflow = createWorkflow(
   (input: CreateBrandWorkflowInput) => {
 
 
-
     //este es un step dentro del workflow
     const brand = createBrandStep(input);
 
+    //este consolelog no funciona en el workflow, pero si en el step y en la api
+    //console.log("este console log viene desde el workflow createBrandWorkflow")
 
     //este es el emisor de eventos que va a escuchar el subscriber para hacer la operacion async al cms
     emitEventStep({

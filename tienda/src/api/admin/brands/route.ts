@@ -24,13 +24,17 @@ export const POST = async (
     input: req.validatedBody,
   });
 
-  console.log(req.validatedBody)
-console.log("llamada Api")
+  console.log("validatedbody del endpoint admin/brands ", req.validatedBody)
+console.log("llamada Api del endpoin admin/brands")
 //The MedusaRequest object's scope property is the Medusa container that holds framework 
 // tools and custom and core modules' services.
 
   res.json({ brand: result });
 };
+
+
+
+
 
 
 
@@ -41,16 +45,13 @@ res: MedusaResponse: Representa la respuesta HTTP que se enviará al cliente.
   */
 export const GET = async (req: MedusaRequest, res: MedusaResponse) => {
     
-    
   /*
 req.scope.resolve("query"): Obtiene el servicio de consultas (query) desde el contenedor de dependencias de Medusa.
 Esto permite acceder a la base de datos utilizando el ORM de Medusa.
-
 When you reach a point in your code where you need a tool, you resolve it from the container and use it.
   */
 
   const query = req.scope.resolve("query")
-
   
   /*
 Aquí se hace una consulta a la base de datos usando el método graph(), que:

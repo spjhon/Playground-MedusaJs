@@ -24,8 +24,11 @@ export const POST = async (
     input: req.validatedBody,
   });
 
-  console.log(req.validatedBody)
-console.log("llamada Api")
+  
+  console.log("este llamado es desde la api post de store ", req.validatedBody)
+  console.log("llamada Api desde endpoint store/brands")
+  
+
 //The MedusaRequest object's scope property is the Medusa container that holds framework 
 // tools and custom and core modules' services.
 
@@ -36,10 +39,9 @@ console.log("llamada Api")
 
 
 
-export const GET = async (
-  req: MedusaRequest,
-  res: MedusaResponse
-) => {
+export const GET = async (req: MedusaRequest, res: MedusaResponse) => {
+
+
   const query = req.scope.resolve("query")
 
   const logger = req.scope.resolve("logger")
@@ -49,12 +51,10 @@ export const GET = async (
   const { data: brands } = await query.graph({
     entity: "brand",
     fields: ["*", "products.*"],
-    filters: {
-      id: "01JPZDMAN79DCMA2FDVH7R14WN",
-    },
+    
   
   })
   
 
-
-  res.json({brands})}
+  res.json({brands})
+}
