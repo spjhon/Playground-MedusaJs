@@ -6,6 +6,7 @@ import {
 import { PostAdminCreateBrand } from "./admin/brands/validators";
 import { z } from "zod";
 import { createFindParams } from "@medusajs/medusa/api/utils/validators"
+import { PostAdminCreateBlogPost } from "./blog/posts/validators";
 
 console.log("se ejecuto el archivo middleware");
 
@@ -37,9 +38,18 @@ export default defineMiddlewares({
         brand_id: z.string().optional(),
       },
     },
+    //este middleware es de post
+    {
+      matcher: "/blog/posts",
+      method: ["POST"],
+      middlewares: [validateAndTransformBody(PostAdminCreateBlogPost)],
+
+    },
 
     //ojo, curiosamente desde la peticion se puede agregar un "fields" para que con unos params en el query de la ruta de peticion
     //se especifique que campos que tengan lins se adicionen a la peticion
+
+    //este de abajo es un ejemplo de un validacion de types pero en el query y paginacion que se utiliza en una ui route
     {
       matcher: "/admin/brands",
       method: "GET",

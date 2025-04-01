@@ -27,5 +27,8 @@ module.exports = defineConfig({
         apiKey: process.env.CMS_API_KEY,
       },
     },
+    {
+      resolve: "./src/modules/blog",
+    },
   ]
 })

@@ -32,8 +32,6 @@ const syncBrandToCmsStep = createStep(
     return new StepResponse(null, brand.id)
   },
 
-
-
   async (id, { container }) => {
     if (!id) {
       return

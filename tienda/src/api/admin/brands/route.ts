@@ -20,14 +20,12 @@ export const POST = async (
   res: MedusaResponse
 ) => {
 
-  const { result } = await createBrandWorkflow(req.scope).run({
-    input: req.validatedBody,
-  });
+  const { result } = await createBrandWorkflow(req.scope).run({input: req.validatedBody});
 
   console.log("validatedbody del endpoint admin/brands ", req.validatedBody)
-console.log("llamada Api del endpoin admin/brands")
-//The MedusaRequest object's scope property is the Medusa container that holds framework 
-// tools and custom and core modules' services.
+  console.log("llamada Api del endpoin admin/brands")
+  //The MedusaRequest object's scope property is the Medusa container that holds framework 
+  // tools and custom and core modules' services.
 
   res.json({ brand: result });
 };
