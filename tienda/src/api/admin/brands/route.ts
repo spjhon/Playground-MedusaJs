@@ -3,6 +3,7 @@ import { createBrandWorkflow } from "../../../workflows/create-brand";
 
 import { z } from "zod"
 import { PostAdminCreateBrand } from "./validators"
+import { ContainerRegistrationKeys } from "@medusajs/framework/utils";
 
 /*
 ESTE TIPADO YA NO IRIA SINO QUE SE UTILIZARIA ZOD PARA LA VALIDACION DE TYPES
@@ -49,7 +50,7 @@ Esto permite acceder a la base de datos utilizando el ORM de Medusa.
 When you reach a point in your code where you need a tool, you resolve it from the container and use it.
   */
 
-  const query = req.scope.resolve("query")
+  const query = req.scope.resolve(ContainerRegistrationKeys.QUERY)
   
   /*
 Aquí se hace una consulta a la base de datos usando el método graph(), que:
