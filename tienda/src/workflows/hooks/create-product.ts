@@ -8,7 +8,8 @@ import BrandModuleService from "../../modules/brand/service";
 //ESTE ES UN HOOK: Este hook lo que va a hacer es incorporar un step en el workflow de createProduct para que se haga POST
 //cuando se cree una nueva marca, la magia esta en que gracias a link, se crea el link y la tabla lista para ser consultada
 
-//entonces lo que se hace es utilizar el hook de createProdcutsworkflow para interceptar el productscreated y asi adicionar el brand
+//entonces lo que se hace es utilizar el hook de createProdcutsworkflow para interceptar el productscreated y asi adicionar 
+// el brand
 
 createProductsWorkflow.hooks.productsCreated(
 
