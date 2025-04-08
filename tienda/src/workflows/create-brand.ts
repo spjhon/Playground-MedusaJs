@@ -75,7 +75,7 @@ export const createBrandWorkflow = createWorkflow(
     const brand = createBrandStep(input);
 
     //este consolelog no funciona en el workflow, pero si en el step y en la api
-    console.log("este console log viene desde el workflow createBrandWorkflow, NO DEBERIA VERSE")
+    console.log("\x1b[35m  -Se ha incrustado el createBrandWorkflow a Medusa JS app-  \x1b[0m")
 
     //este es el emisor de eventos que va a escuchar el subscriber para hacer la operacion async al cms
     emitEventStep({

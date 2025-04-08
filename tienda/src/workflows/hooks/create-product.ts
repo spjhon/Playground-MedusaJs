@@ -24,7 +24,7 @@ createProductsWorkflow.hooks.productsCreated(
       return new StepResponse([], []);
     }
 
-//aqui estamos haciendo una instancia del contanier para obtener las factory functions del modulo brand a travez de su servicio
+    //aqui estamos haciendo una instancia del contanier para obtener las factory functions del modulo brand a travez de su servicio
     const brandModuleService: BrandModuleService = container.resolve(BRAND_MODULE);
 
     // if the brand doesn't exist, an error is thrown.
@@ -56,14 +56,11 @@ createProductsWorkflow.hooks.productsCreated(
 
 
     return new StepResponse(links, links);
-  }
-
-
-  
-),
+    
+  }),
 
   
-    //Esta es la funcion de compensacion por si algo sale mal y  hay que deshacer lo que se hizo
+  //Esta es la funcion de compensacion por si algo sale mal y  hay que deshacer lo que se hizo
   (async (links, { container }) => {
     if (!links?.length) {
       return
