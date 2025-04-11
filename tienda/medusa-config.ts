@@ -56,15 +56,6 @@ module.exports = defineConfig({
       resolve: "@medusajs/medusa/locking",
       options: {
         providers: [
-          // add providers here...
-        ],
-      },
-    },
-
-    {
-      resolve: "@medusajs/medusa/locking",
-      options: {
-        providers: [
           {
             resolve: "@medusajs/medusa/locking-redis",
             id: "locking-redis",
