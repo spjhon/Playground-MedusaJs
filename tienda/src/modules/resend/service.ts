@@ -12,6 +12,7 @@ import {
     CreateEmailOptions 
 } from "resend";
 
+import { orderPlacedEmail } from "./emails/order-placed"
 
 //Estos son los types para las opciones que entran al instanciarse una clase de tipo notificacion de email
 type ResendOptions = {
@@ -31,7 +32,8 @@ enum Templates {ORDER_PLACED = "order-placed"}
 
 
 const templates: {[key in Templates]?: (props: unknown) => React.ReactNode} = {
-    // TODO add templates
+    //TODO estos son los templates de email
+    [Templates.ORDER_PLACED]: orderPlacedEmail,
   }
 
 
@@ -87,6 +89,7 @@ class ResendNotificationProviderService extends AbstractNotificationProviderServ
 
 
     getTemplate(template: Templates) {
+        
         if (this.options.html_templates?.[template]) {
             return this.options.html_templates[template].content
         }
