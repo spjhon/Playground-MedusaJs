@@ -1,8 +1,17 @@
 import { AbstractNotificationProviderService, MedusaError} from "@medusajs/framework/utils";
 
-import { Logger } from "@medusajs/framework/types";
+import { 
+    Logger, 
+    //estos provider son utilizados para el envio de los correos en el metodo send
+    ProviderSendNotificationDTO, 
+    ProviderSendNotificationResultsDTO 
+} from "@medusajs/framework/types";
 
-import { Resend } from "resend";
+import { 
+    Resend, 
+    CreateEmailOptions 
+} from "resend";
+
 
 //Estos son los types para las opciones que entran al instanciarse una clase de tipo notificacion de email
 type ResendOptions = {
@@ -11,10 +20,12 @@ type ResendOptions = {
   html_templates?: Record<string, {subject?: string; content: string;}>;
 };
 
+
 //estas son las dependencias inyectadas a travez del logger
 type InjectedDependencies = {
     logger: Logger
 }
+
 
 enum Templates {ORDER_PLACED = "order-placed"}
 
@@ -35,7 +46,19 @@ class ResendNotificationProviderService extends AbstractNotificationProviderServ
     private options: ResendOptions;
     private logger: Logger;
 
-    static validateOptions(options: Record<any, any>) {
+    /**
+     * En otras palabras: antes de usar la clase ResendNotificationProviderService, 
+     * este método se puede usar para asegurarse de que tiene la configuración mínima 
+     * necesaria para funcionar (como la API key y el remitente del email).
+     * 
+     * Es un método estático, así que puedes llamarlo como 
+     * ResendNotificationProviderService.validateOptions(...) sin necesidad de crear un objeto.
+     * Recibe un objeto llamado options.
+     * 
+     * En cuanto al { [key: string]: any } Esa es solo una forma de decir "un objeto cualquiera" 
+     * (como { clave: valor }). En este contexto:
+     */
+    static validateOptions(options: { [key: string]: any }) {
 
         if (!options.api_key) {
             throw new MedusaError(
@@ -90,6 +113,56 @@ class ResendNotificationProviderService extends AbstractNotificationProviderServ
             default: 
                 return "New Email"
         }
+    }
+
+    /**
+     * 
+     * @param {ProviderSendNotificationDTO} notification 
+     * 
+     * Es un método asincrónico que recibe un objeto notification.
+     * Devuelve una promesa que resuelve con el resultado del envío del correo.
+     * @returns Promise
+     */
+    async send(notification: ProviderSendNotificationDTO): Promise<ProviderSendNotificationResultsDTO> 
+    {
+        const template = this.getTemplate(notification.template as Templates)
+    
+        if (!template) {
+          this.logger.error(`Couldn't find an email template for ${notification.template}. The valid options are ${Object.values(Templates)}`)
+          return {}
+        }
+    
+        let emailOptions: CreateEmailOptions
+
+        if (typeof template === "string") {
+            emailOptions = {
+            from: this.options.from,
+            to: [notification.to],
+            subject: this.getTemplateSubject(notification.template as Templates),
+            html: template,
+        }
+        } else {
+        emailOptions = {
+            from: this.options.from,
+            to: [notification.to],
+            subject: this.getTemplateSubject(notification.template as Templates),
+            react: template(notification.data),
+        }
+        }
+    
+        const { data, error } = await this.resendClient.emails.send(emailOptions)
+    
+        if (error || !data) {
+            if (error) {
+              this.logger.error("Failed to send email", error)
+            } else {
+              this.logger.error("Failed to send email: unknown error")
+            }
+            return {}
+        }
+    
+        
+        return { id: data.id }
     }
 
 }
