@@ -13,6 +13,8 @@ import {
 } from "resend";
 
 import { orderPlacedEmail } from "./emails/order-placed"
+import { brandCreatedEmail } from "./emails/brand-created"
+
 
 //Estos son los types para las opciones que entran al instanciarse una clase de tipo notificacion de email
 type ResendOptions = {
@@ -28,12 +30,13 @@ type InjectedDependencies = {
 }
 
 
-enum Templates {ORDER_PLACED = "order-placed"}
+enum Templates {ORDER_PLACED = "order-placed", BRAND_CREATED = "brand-created"}
 
 
 const templates: {[key in Templates]?: (props: unknown) => React.ReactNode} = {
     //TODO estos son los templates de email
     [Templates.ORDER_PLACED]: orderPlacedEmail,
+    [Templates.BRAND_CREATED]: brandCreatedEmail,
   }
 
 
@@ -59,8 +62,16 @@ class ResendNotificationProviderService extends AbstractNotificationProviderServ
      * 
      * En cuanto al { [key: string]: any } Esa es solo una forma de decir "un objeto cualquiera" 
      * (como { clave: valor }). En este contexto:
+     * 
+     * Medusa 2.0 tiene una arquitectura modular donde, cuando registras un módulo personalizado 
+     * (como hiciste con ModuleProvider(Modules.NOTIFICATION, { services: [...] })), el core de Medusa 
+     * llama automáticamente al método validateOptions() si está definido como static.
+     * ✅ Es una convención. Si el servicio exportado por el módulo tiene un método static validateOptions(options), 
+     * Medusa lo ejecuta al momento de instanciar el módulo.
      */
     static validateOptions(options: { [key: string]: any }) {
+
+        console.log("✅ validateOptions() ejecutado con los options: ", options);
 
         if (!options.api_key) {
             throw new MedusaError(

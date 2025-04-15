@@ -8,7 +8,7 @@ import { z } from "zod";
 import { createFindParams } from "@medusajs/medusa/api/utils/validators"
 import { PostAdminCreateBlogPost } from "./blog/posts/validators";
 
-console.log("se ejecuto el archivo middleware");
+console.log("\x1b[35m  -Se ha incrustado todos los middleware a Medusa JS app-  \x1b[0m")
 
 
 

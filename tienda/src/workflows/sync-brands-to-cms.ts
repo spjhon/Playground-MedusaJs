@@ -25,6 +25,8 @@ const syncBrandToCmsStep = createStep(
 
   async ({ brand }: SyncBrandToCmsStepInput, { container }) => {
 
+    console.log("Se ha ejecutado el syncBrandToCmsStep que ejecuta el cmsModuleService.createBrand() service ")
+
     const cmsModuleService: CmsModuleService = container.resolve(CMS_MODULE)
 
     await cmsModuleService.createBrand(brand)
@@ -32,6 +34,7 @@ const syncBrandToCmsStep = createStep(
     return new StepResponse(null, brand.id)
   },
 
+  //esta es la funcion de compenzacion
   async (id, { container }) => {
     if (!id) {
       return
@@ -53,6 +56,9 @@ const syncBrandToCmsStep = createStep(
 export const syncBrandToCmsWorkflow = createWorkflow(
     "sync-brand-to-cms",
     (input: SyncBrandToCmsWorkflowInput) => {
+
+      console.log("\x1b[35m  -Se ha incrustado el syncBrandToCmsWorkflow a Medusa JS app-  \x1b[0m")
+
       // @ts-ignore
       const { data: brands } = useQueryGraphStep({entity: "brand", fields: ["*"], filters: {id: input.id},
         //Throw an error if a brand with the specified ID doesn't exist.

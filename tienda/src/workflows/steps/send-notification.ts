@@ -10,6 +10,8 @@ export const sendNotificationStep = createStep(
     const notificationModuleService = container.resolve(Modules.NOTIFICATION);
 
     const notification = await notificationModuleService.createNotifications(data);
+
+    console.log("Se ha ejecutado el step sendNotificationStep que activa el notificationModuleService.createNotifications() ")
     
     return new StepResponse(notification);
   }

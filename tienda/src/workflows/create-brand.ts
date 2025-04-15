@@ -35,7 +35,7 @@ export const createBrandStep = createStep(
     const brand = await brandModuleService.createBrands(input);
 
    //este consolelog si funciona, mientras que en el workflow no funciona
-    console.log("este console log viene desde el step", input)
+    console.log("El step createBrandStep se ha ejecutado correctamente con el input: ", input)
 
     //entonces por obligacion hay que devolver el stepresponse que devuelve 
     return new StepResponse(brand, brand.id);

@@ -44,7 +44,7 @@ import {
       const post = createPostStep(postInput)
 
       //este consolelog no funciona en el workflow, pero si en el step y en la api
-    console.log("este console log viene desde el workflow CreatePostWorkflowInput, NO DEBERIA VERSE")
+      console.log("\x1b[35m  -Se ha incrustado el createPostWorkflow a Medusa JS app-  \x1b[0m")
   
       return new WorkflowResponse(post)
     }
