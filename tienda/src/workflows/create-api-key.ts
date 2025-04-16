@@ -17,19 +17,27 @@ const createApiKeyStep = createStep(
 
     const apiKeyModuleService = container.resolve(Modules.API_KEY);
 
+
+    
     const apiKey = await apiKeyModuleService.createApiKeys({
       title: "Publishable API key",
       type: "publishable",
       created_by: "user_123",
     });
 
+    
+
     return new StepResponse({ apiKey }, apiKey.id);
   },
 
 
   async (apiKeyId, { container }) => {
+    if (!apiKeyId) {
+      throw new Error("API Key ID is undefined");
+    }
+  
     const apiKeyModuleService = container.resolve(Modules.API_KEY);
-
+  
     await apiKeyModuleService.deleteApiKeys([apiKeyId]);
   }
 
