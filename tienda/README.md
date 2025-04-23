@@ -44,10 +44,19 @@ In a common Medusa application, requests go through four layers in the stack. In
 - **Workflow Hooks**: inject custom functionalities into a workflow at predefined points, called hooks. This allows you to perform custom actions as a part of a core workflow without hacky workarounds.
 - **Additional Data in API Routes**: Configure core API routes to accept request parameters relevant to your customizations. These parameters are passed to the underlying workflow's hooks, where you can manage your custom data as part of an existing flow.
 
-### Entendiendo los modelos de datos
+### Entendiendo los modulos
 
 #### Auth Module
 
-Este modulo consta de una tabla basica llamada `User` la cual solo tiene los datos de usuario, luego se tiene una tabla llamada `auth_identity` que solo relaciona el usuario con un id de authidentity por ultimo se tiene el `provider_identity` que es el que tiene el nombre del provider (emailpass) y la contrasena.
+El moduclo cuenta con dos tablas:
+
+- `auth_identity`  
+- `provider_identity`
+
+Uno posee una identidad de autorizacion que solo es un id de autorizacion y el proveedor es el que tiene la constraseña y el usuario al que pertenece ademas de saber a que tipo de autenticacion pertenece (google, emailpass, github)
 
 Esto se hace ya que un ACTOR TYPE puede ser User, Customer, etc.
+
+#### Cart Module
+
+El carrito trae su tabla `cart` la cual trae referencias de `shipping adress` y `billing adress` y basciamente cart es como un carrito vacio en la base de datos y cada item que se agrega es un `cart line item` en donde esta el articulo y su cantidad y otros datos para asociar.
