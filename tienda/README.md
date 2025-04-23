@@ -43,3 +43,11 @@ In a common Medusa application, requests go through four layers in the stack. In
 - **Module Links**: Link data models of different modules without building direct dependencies, ensuring that the Medusa application integrates your modules without side effects.
 - **Workflow Hooks**: inject custom functionalities into a workflow at predefined points, called hooks. This allows you to perform custom actions as a part of a core workflow without hacky workarounds.
 - **Additional Data in API Routes**: Configure core API routes to accept request parameters relevant to your customizations. These parameters are passed to the underlying workflow's hooks, where you can manage your custom data as part of an existing flow.
+
+### Entendiendo los modelos de datos
+
+#### Auth Module
+
+Este modulo consta de una tabla basica llamada `User` la cual solo tiene los datos de usuario, luego se tiene una tabla llamada `auth_identity` que solo relaciona el usuario con un id de authidentity por ultimo se tiene el `provider_identity` que es el que tiene el nombre del provider (emailpass) y la contrasena.
+
+Esto se hace ya que un ACTOR TYPE puede ser User, Customer, etc.
