@@ -10,8 +10,11 @@ import {
   }
   
   export const sendOrderConfirmationWorkflow = createWorkflow(
+
     "send-order-confirmation",
-    ({ id }: WorkflowInput) => {
+
+
+    function ({ id }: WorkflowInput) {
 
       console.log("\x1b[35m  -Se ha incrustado el sendOrderConfirmationWorkflow a Medusa JS app-  \x1b[0m")
 
@@ -41,4 +44,6 @@ import {
   
       return new WorkflowResponse(notification)
     }
+
+
   )
