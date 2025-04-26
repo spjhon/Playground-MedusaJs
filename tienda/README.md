@@ -60,3 +60,5 @@ Esto se hace ya que un ACTOR TYPE puede ser User, Customer, etc.
 #### Cart Module
 
 El carrito trae su tabla `cart` la cual trae referencias de `shipping adress` y `billing adress` y basciamente cart es como un carrito vacio en la base de datos y cada item que se agrega es un `cart line item` en donde esta el articulo y su cantidad y otros datos para asociar.
+
+Algo importante, en una tabla sql, EL QUE TIENE LA LLAVE FORANEA ES EL QUE SOLO PUEDE TENER UNO DEL OTRO, UNO Y NADA MAS.
