@@ -62,3 +62,31 @@ Esto se hace ya que un ACTOR TYPE puede ser User, Customer, etc.
 El carrito trae su tabla `cart` la cual trae referencias de `shipping adress` y `billing adress` y basciamente cart es como un carrito vacio en la base de datos y cada item que se agrega es un `cart line item` en donde esta el articulo y su cantidad y otros datos para asociar.
 
 Algo importante, en una tabla sql, EL QUE TIENE LA LLAVE FORANEA ES EL QUE SOLO PUEDE TENER UNO DEL OTRO, UNO Y NADA MAS.
+
+### Base de Datos
+
+Medusa utiliza redis para almacenamiento temporal (cache y sessiones de autenticacion) y postgre como base de datos relacional permanente.
+
+lago importante: [DATABASE_URL=postgresql://postgres:Discovery69%25@db.iwnpyckvirejefdxynbr.supabase.co:5432/postgres]
+
+Tips para entender las relaciones de medusa:
+
+- Si dice belongsto, esa tabla tiene la foreing key y la otra dice hasMany casi siempre
+- Si dice hasonewithforeingkey, esa tabla tiene la foreingkey y normalmente la otra tabla no dice o dice hasone
+- Aunque suene contradictorio, en sql la tabla de muchos es la que tiene la foreingkey y la tabla uno es la que no tiene foreingkey
+- una forma de leerlo con fulfillment "UNO solo fulfillment_set esta referenciado en MUCHOS service_zones" osea que el mismo fulfillment_set se va a repetir en diferentes service_zones. 1 FulfillmentSet tiene N ServiceZones. Cada ServiceZone pertenece a un solo FulfillmentSet.
+- En cuanto a los lados del link, el que dice esList es el que guarda la foreingkey de la otra y por eso se puede repetir el mismo id de la tabla que no tiene el esList en varios ids de la tabla que si tiene el esList.
+- Cuando se muestra que una tabla apunta a otra, es la hija (LA QUE TIENE LA FOREINGKEY) que apunta al padre (QUE NO TIENE FOREING KEY)
+- Cuando se le dice borrado en cascada, el borrado en cascada se definiria en la tabla que tiene el foreingkye pero el suceso se registraria en la otra tabla, la tabla padre, si esta talba se borra, borra tambien el registro en donde tenga su foreingkey registrada osea en el hijo que apunta al padre.
+- La direccion de los links es importante, por eso: A es el que "apunta" a B en la definicon de los links: defineLink(A, B), La foreign key queda del lado de A. Piensa en esto como: ¿Quién necesita saber del otro? → Ese es el que apunta. ¿Quién guarda la referencia? → Ese es el que apunta.
+
+#### En cuanto a links y su necesidad
+
+📖 ¿Cuándo es una extensión y cuándo una asociación?
+
+📝 Extensión:
+Cuando quieres agregarle más campos a un modelo principal, pero no puedes (o no quieres) modificar directamente su definición porque es parte de otro módulo (por modularidad, escalabilidad o clean architecture).
+
+📝 Asociación:
+Cuando quieres simplemente relacionar dos modelos que tienen vida propia y no dependen uno del otro.
+Ejemplo típico: un Post que hace referencia a un Product.
