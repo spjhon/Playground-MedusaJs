@@ -79,6 +79,7 @@ Tips para entender las relaciones de medusa:
 - Cuando se muestra que una tabla apunta a otra, es la hija (LA QUE TIENE LA FOREINGKEY) que apunta al padre (QUE NO TIENE FOREING KEY)
 - Cuando se le dice borrado en cascada, el borrado en cascada se definiria en la tabla que tiene el foreingkye pero el suceso se registraria en la otra tabla, la tabla padre, si esta talba se borra, borra tambien el registro en donde tenga su foreingkey registrada osea en el hijo que apunta al padre.
 - La direccion de los links es importante, por eso: A es el que "apunta" a B en la definicon de los links: defineLink(A, B), La foreign key queda del lado de A. Piensa en esto como: ¿Quién necesita saber del otro? → Ese es el que apunta. ¿Quién guarda la referencia? → Ese es el que apunta.
+- En un schema una forma de interpretar que el padre (por ejemplo service_zone), uno solo de esos tiene muchos hijos (shiping_options) y deja su marca dejando su id (el id de service_zone) en la tabla de shiping_options, de esa forma se logra entender que uno o varios shiping options le pertenecen a service_zone.
 
 #### En cuanto a links y su necesidad
 
