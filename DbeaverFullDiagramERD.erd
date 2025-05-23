@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagram version="1" name="DbeaverFullDiagramERD.erd">
+	<entities>
+		<data-source id="postgres-jdbc-196fd7edc2c-7030cf89bff75be4">
+			<entity id="1" name="account_holder" fq-name="public.account_holder" order="0" x="1554" y="4723">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="2" name="api_key" fq-name="public.api_key" order="1" color-bg="0,128,0" x="202" y="124">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="3" name="application_method_buy_rules" fq-name="public.application_method_buy_rules" order="2" x="1035" y="6655">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="4" name="application_method_target_rules" fq-name="public.application_method_target_rules" order="3" x="1035" y="6799">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="5" name="auth_identity" fq-name="public.auth_identity" order="4" x="754" y="5877">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="6" name="capture" fq-name="public.capture" order="6" x="900" y="8471">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="7" name="cart" fq-name="public.cart" order="7" x="2664" y="1068">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="8" name="cart_address" fq-name="public.cart_address" order="8" x="2930" y="1038">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="9" name="cart_line_item" fq-name="public.cart_line_item" order="9" x="2355" y="344">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="10" name="cart_line_item_adjustment" fq-name="public.cart_line_item_adjustment" order="10" x="2065" y="305">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="11" name="cart_line_item_tax_line" fq-name="public.cart_line_item_tax_line" order="11" x="2065" y="649">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="12" name="cart_payment_collection" fq-name="public.cart_payment_collection" order="12" x="1363" y="4445">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="13" name="cart_promotion" fq-name="public.cart_promotion" order="13" x="1601" y="4445">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="14" name="cart_shipping_method" fq-name="public.cart_shipping_method" order="14" x="2355" y="1068">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="15" name="cart_shipping_method_adjustment" fq-name="public.cart_shipping_method_adjustment" order="15" x="2065" y="973">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="16" name="cart_shipping_method_tax_line" fq-name="public.cart_shipping_method_tax_line" order="16" x="2065" y="1317">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="17" name="credit_line" fq-name="public.credit_line" order="17" x="2355" y="1432">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="18" name="currency" fq-name="public.currency" order="18" x="2565" y="4713">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="19" name="customer" fq-name="public.customer" order="19" x="1245" y="1755">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="20" name="customer_account_holder" fq-name="public.customer_account_holder" order="20" x="1882" y="4445">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="21" name="customer_address" fq-name="public.customer_address" order="21" x="955" y="1765">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="22" name="customer_group" fq-name="public.customer_group" order="22" x="1245" y="1511">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="23" name="customer_group_customer" fq-name="public.customer_group_customer" order="23" x="955" y="1501">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="24" name="fulfillment" fq-name="public.fulfillment" order="24" x="2128" y="6063">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="25" name="fulfillment_address" fq-name="public.fulfillment_address" order="25" x="2582" y="6621">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="26" name="fulfillment_item" fq-name="public.fulfillment_item" order="26" x="1838" y="5832">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="27" name="fulfillment_label" fq-name="public.fulfillment_label" order="27" x="1838" y="6176">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="28" name="fulfillment_provider" fq-name="public.fulfillment_provider" order="28" x="2153" y="5555">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="29" name="fulfillment_set" fq-name="public.fulfillment_set" order="29" x="2923" y="5751">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="30" name="geo_zone" fq-name="public.geo_zone" order="30" x="2607" y="5316">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="31" name="image" fq-name="public.image" order="31" x="1984" y="2406">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="32" name="inventory_item" fq-name="public.inventory_item" order="32" x="1395" y="3444">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="33" name="inventory_level" fq-name="public.inventory_level" order="33" x="1105" y="3270">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="34" name="invite" fq-name="public.invite" order="34" x="1792" y="4723">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="35" name="link_module_migrations" fq-name="public.link_module_migrations" order="35" x="330" y="4465">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="36" name="location_fulfillment_provider" fq-name="public.location_fulfillment_provider" order="36" x="2123" y="4445">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="37" name="location_fulfillment_set" fq-name="public.location_fulfillment_set" order="37" x="2374" y="4445">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="38" name="mikro_orm_migrations" fq-name="public.mikro_orm_migrations" order="38" x="40" y="4475">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="39" name="notification" fq-name="public.notification" order="39" x="570" y="629">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="40" name="notification_provider" fq-name="public.notification_provider" order="40" x="860" y="719">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="41" name="order" fq-name="public.&quot;order&quot;" order="41" x="2540" y="9483">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="42" name="order_address" fq-name="public.order_address" order="42" x="2785" y="9462">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="43" name="order_cart" fq-name="public.order_cart" order="43" x="2626" y="4445">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="44" name="order_change" fq-name="public.order_change" order="44" x="2210" y="9181">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="45" name="order_change_action" fq-name="public.order_change_action" order="45" x="1996" y="9223">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="46" name="order_claim" fq-name="public.order_claim" order="46" x="869" y="5304">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="47" name="order_claim_item" fq-name="public.order_claim_item" order="47" x="270" y="5334">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="48" name="order_claim_item_image" fq-name="public.order_claim_item_image" order="48" x="3432" y="5064">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="49" name="order_credit_line" fq-name="public.order_credit_line" order="49" x="2568" y="9103">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="50" name="order_exchange" fq-name="public.order_exchange" order="50" x="1135" y="5304">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="51" name="order_exchange_item" fq-name="public.order_exchange_item" order="51" x="2817" y="4713">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="52" name="order_fulfillment" fq-name="public.order_fulfillment" order="52" x="2862" y="4445">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="53" name="order_item" fq-name="public.order_item" order="53" x="1962" y="9710">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="54" name="order_line_item" fq-name="public.order_line_item" order="54" x="1621" y="9688">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="55" name="order_line_item_adjustment" fq-name="public.order_line_item_adjustment" order="55" x="1184" y="9730">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="56" name="order_line_item_tax_line" fq-name="public.order_line_item_tax_line" order="56" x="1216" y="10018">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="57" name="order_payment_collection" fq-name="public.order_payment_collection" order="57" x="1220" y="5060">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="58" name="order_promotion" fq-name="public.order_promotion" order="58" x="3460" y="5286">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="59" name="order_shipping" fq-name="public.order_shipping" order="59" x="2610" y="10087">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="60" name="order_shipping_method" fq-name="public.order_shipping_method" order="60" x="685" y="3064">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="61" name="order_shipping_method_adjustment" fq-name="public.order_shipping_method_adjustment" order="61" x="395" y="2968">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="62" name="order_shipping_method_tax_line" fq-name="public.order_shipping_method_tax_line" order="62" x="395" y="3292">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="63" name="order_summary" fq-name="public.order_summary" order="63" x="231" y="4723">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="64" name="order_transaction" fq-name="public.order_transaction" order="64" x="2398" y="10031">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="65" name="payment" fq-name="public.payment" order="65" x="1190" y="8695">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="66" name="payment_collection" fq-name="public.payment_collection" order="66" x="1499" y="8675">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="67" name="payment_collection_payment_providers" fq-name="public.payment_collection_payment_providers" order="67" x="1956" y="8622">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="68" name="payment_provider" fq-name="public.payment_provider" order="68" x="1951" y="8830">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="69" name="payment_session" fq-name="public.payment_session" order="69" x="1190" y="8311">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="70" name="post" fq-name="public.post" order="70" x="1125" y="4455">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="71" name="price" fq-name="public.price" order="71" x="2696" y="8049">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="72" name="price_list" fq-name="public.price_list" order="72" x="3005" y="8323">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="73" name="price_list_rule" fq-name="public.price_list_rule" order="73" x="2696" y="8413">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="74" name="price_preference" fq-name="public.price_preference" order="74" x="521" y="4723">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="75" name="price_rule" fq-name="public.price_rule" order="75" x="2406" y="8089">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="76" name="price_set" fq-name="public.price_set" order="76" x="3005" y="8139">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="77" name="product" fq-name="public.product" order="77" x="2250" y="2505">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="78" name="product_category" fq-name="public.product_category" order="78" x="2250" y="3313">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="79" name="product_category_product" fq-name="public.product_category_product" order="79" x="2280" y="3132">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="80" name="product_collection" fq-name="public.product_collection" order="80" x="2470" y="2558">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="81" name="product_option" fq-name="public.product_option" order="81" x="1984" y="2670">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="82" name="product_option_value" fq-name="public.product_option_value" order="82" x="1675" y="2403">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="83" name="product_product_brand_brand" fq-name="public.product_product_brand_brand" order="83" x="3159" y="5311">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="84" name="product_sales_channel" fq-name="public.product_sales_channel" order="84" x="1475" y="5074">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="85" name="product_shipping_profile" fq-name="public.product_shipping_profile" order="85" x="1695" y="5074">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="86" name="product_tag" fq-name="public.product_tag" order="86" x="1933" y="3062">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="87" name="product_tags" fq-name="public.product_tags" order="87" x="1984" y="2935">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="88" name="product_type" fq-name="public.product_type" order="88" x="2470" y="2802">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="89" name="product_variant" fq-name="public.product_variant" order="89" x="1675" y="2647">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="90" name="product_variant_inventory_item" fq-name="public.product_variant_inventory_item" order="90" x="830" y="4743">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="91" name="product_variant_option" fq-name="public.product_variant_option" order="91" x="1385" y="2650">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="92" name="product_variant_price_set" fq-name="public.product_variant_price_set" order="92" x="1933" y="5074">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="93" name="promotion" fq-name="public.promotion" order="93" x="264" y="6992">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="94" name="promotion_application_method" fq-name="public.promotion_application_method" order="94" x="450" y="7335">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="95" name="promotion_campaign" fq-name="public.promotion_campaign" order="95" x="280" y="6523">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="96" name="promotion_campaign_budget" fq-name="public.promotion_campaign_budget" order="96" x="604" y="6229">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="97" name="promotion_promotion_rule" fq-name="public.promotion_promotion_rule" order="97" x="1035" y="6287">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="98" name="promotion_rule" fq-name="public.promotion_rule" order="98" x="1325" y="6375">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="99" name="promotion_rule_value" fq-name="public.promotion_rule_value" order="99" x="1035" y="6431">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="100" name="provider_identity" fq-name="public.provider_identity" order="100" x="467" y="5891">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="101" name="publishable_api_key_sales_channel" fq-name="public.publishable_api_key_sales_channel" order="101" x="2171" y="5074">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="102" name="refund" fq-name="public.refund" order="102" x="900" y="8755">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="103" name="refund_reason" fq-name="public.refund_reason" order="103" x="1096" y="4743">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="104" name="region" fq-name="public.region" order="104" x="1965" y="7373">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="105" name="region_country" fq-name="public.region_country" order="105" x="1935" y="7853">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="106" name="region_payment_provider" fq-name="public.region_payment_provider" order="106" x="2452" y="5074">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="107" name="reservation_item" fq-name="public.reservation_item" order="107" x="1105" y="3634">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="108" name="return" fq-name="public.&quot;return&quot;" order="108" x="1593" y="5264">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="109" name="return_fulfillment" fq-name="public.return_fulfillment" order="109" x="2693" y="5074">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="110" name="return_item" fq-name="public.return_item" order="110" x="1355" y="5304">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="111" name="return_reason" fq-name="public.return_reason" order="111" x="2073" y="4723">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="112" name="sales_channel" fq-name="public.sales_channel" order="112" x="1316" y="4733">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="113" name="sales_channel_stock_location" fq-name="public.sales_channel_stock_location" order="113" x="2944" y="5074">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="114" name="script_migrations" fq-name="public.script_migrations" order="114" x="639" y="4465">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="115" name="service_zone" fq-name="public.service_zone" order="115" x="2703" y="5751">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="116" name="shipping_option" fq-name="public.shipping_option" order="116" x="2437" y="6113">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="117" name="shipping_option_price_set" fq-name="public.shipping_option_price_set" order="117" x="3196" y="5074">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="118" name="shipping_option_rule" fq-name="public.shipping_option_rule" order="118" x="2518" y="7174">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="119" name="shipping_option_type" fq-name="public.shipping_option_type" order="119" x="3083" y="6169">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="120" name="shipping_profile" fq-name="public.shipping_profile" order="120" x="2703" y="6443">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="121" name="stock_location" fq-name="public.stock_location" order="121" x="1245" y="7871">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="122" name="stock_location_address" fq-name="public.stock_location_address" order="122" x="1535" y="7427">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="123" name="store" fq-name="public.store" order="123" x="330" y="8374">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="124" name="store_currency" fq-name="public.store_currency" order="124" x="40" y="8394">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="125" name="tax_provider" fq-name="public.tax_provider" order="125" x="973" y="9209">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="126" name="tax_rate" fq-name="public.tax_rate" order="126" x="398" y="9139">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="127" name="tax_rate_rule" fq-name="public.tax_rate_rule" order="127" x="108" y="9169">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="128" name="tax_region" fq-name="public.tax_region" order="128" x="707" y="9159">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="129" name="user" fq-name="public.&quot;user&quot;" order="129" x="2314" y="4723">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="130" name="workflow_execution" fq-name="public.workflow_execution" order="130" x="3053" y="4713">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+			<entity id="131" name="brand" fq-name="public.brand" order="5" x="1618" y="1237">
+				<path name="public"/>
+				<path name="postgres"/>
+			</entity>
+		</data-source>
+	</entities>
+	<relations>
+		<relation name="provider_identity_auth_identity_id_foreign" fq-name="public.provider_identity.provider_identity_auth_identity_id_foreign" type="fk" pk-ref="5" fk-ref="100"/>
+		<relation name="cart_line_item_cart_id_foreign" fq-name="public.cart_line_item.cart_line_item_cart_id_foreign" type="fk" pk-ref="7" fk-ref="9"/>
+		<relation name="cart_shipping_method_cart_id_foreign" fq-name="public.cart_shipping_method.cart_shipping_method_cart_id_foreign" type="fk" pk-ref="7" fk-ref="14"/>
+		<relation name="credit_line_cart_id_foreign" fq-name="public.credit_line.credit_line_cart_id_foreign" type="fk" pk-ref="7" fk-ref="17"/>
+		<relation name="cart_billing_address_id_foreign" fq-name="public.cart.cart_billing_address_id_foreign" type="fk" pk-ref="8" fk-ref="7"/>
+		<relation name="cart_shipping_address_id_foreign" fq-name="public.cart.cart_shipping_address_id_foreign" type="fk" pk-ref="8" fk-ref="7"/>
+		<relation name="cart_line_item_adjustment_item_id_foreign" fq-name="public.cart_line_item_adjustment.cart_line_item_adjustment_item_id_foreign" type="fk" pk-ref="9" fk-ref="10"/>
+		<relation name="cart_line_item_tax_line_item_id_foreign" fq-name="public.cart_line_item_tax_line.cart_line_item_tax_line_item_id_foreign" type="fk" pk-ref="9" fk-ref="11"/>
+		<relation name="cart_shipping_method_adjustment_shipping_method_id_foreign" fq-name="public.cart_shipping_method_adjustment.cart_shipping_method_adjustment_shipping_method_id_foreign" type="fk" pk-ref="14" fk-ref="15"/>
+		<relation name="cart_shipping_method_tax_line_shipping_method_id_foreign" fq-name="public.cart_shipping_method_tax_line.cart_shipping_method_tax_line_shipping_method_id_foreign" type="fk" pk-ref="14" fk-ref="16"/>
+		<relation name="customer_address_customer_id_foreign" fq-name="public.customer_address.customer_address_customer_id_foreign" type="fk" pk-ref="19" fk-ref="21"/>
+		<relation name="customer_group_customer_customer_id_foreign" fq-name="public.customer_group_customer.customer_group_customer_customer_id_foreign" type="fk" pk-ref="19" fk-ref="23"/>
+		<relation name="customer_group_customer_customer_group_id_foreign" fq-name="public.customer_group_customer.customer_group_customer_customer_group_id_foreign" type="fk" pk-ref="22" fk-ref="23"/>
+		<relation name="fulfillment_item_fulfillment_id_foreign" fq-name="public.fulfillment_item.fulfillment_item_fulfillment_id_foreign" type="fk" pk-ref="24" fk-ref="26"/>
+		<relation name="fulfillment_label_fulfillment_id_foreign" fq-name="public.fulfillment_label.fulfillment_label_fulfillment_id_foreign" type="fk" pk-ref="24" fk-ref="27"/>
+		<relation name="fulfillment_delivery_address_id_foreign" fq-name="public.fulfillment.fulfillment_delivery_address_id_foreign" type="fk" pk-ref="25" fk-ref="24"/>
+		<relation name="fulfillment_provider_id_foreign" fq-name="public.fulfillment.fulfillment_provider_id_foreign" type="fk" pk-ref="28" fk-ref="24"/>
+		<relation name="shipping_option_provider_id_foreign" fq-name="public.shipping_option.shipping_option_provider_id_foreign" type="fk" pk-ref="28" fk-ref="116"/>
+		<relation name="service_zone_fulfillment_set_id_foreign" fq-name="public.service_zone.service_zone_fulfillment_set_id_foreign" type="fk" pk-ref="29" fk-ref="115"/>
+		<relation name="inventory_level_inventory_item_id_foreign" fq-name="public.inventory_level.inventory_level_inventory_item_id_foreign" type="fk" pk-ref="32" fk-ref="33"/>
+		<relation name="reservation_item_inventory_item_id_foreign" fq-name="public.reservation_item.reservation_item_inventory_item_id_foreign" type="fk" pk-ref="32" fk-ref="107"/>
+		<relation name="notification_provider_id_foreign" fq-name="public.notification.notification_provider_id_foreign" type="fk" pk-ref="40" fk-ref="39"/>
+		<relation name="order_change_order_id_foreign" fq-name="public.order_change.order_change_order_id_foreign" type="fk" pk-ref="41" fk-ref="44"/>
+		<relation name="order_credit_line_order_id_foreign" fq-name="public.order_credit_line.order_credit_line_order_id_foreign" type="fk" pk-ref="41" fk-ref="49"/>
+		<relation name="order_item_order_id_foreign" fq-name="public.order_item.order_item_order_id_foreign" type="fk" pk-ref="41" fk-ref="53"/>
+		<relation name="order_shipping_order_id_foreign" fq-name="public.order_shipping.order_shipping_order_id_foreign" type="fk" pk-ref="41" fk-ref="59"/>
+		<relation name="order_transaction_order_id_foreign" fq-name="public.order_transaction.order_transaction_order_id_foreign" type="fk" pk-ref="41" fk-ref="64"/>
+		<relation name="order_billing_address_id_foreign" fq-name="public.&quot;order&quot;.order_billing_address_id_foreign" type="fk" pk-ref="42" fk-ref="41"/>
+		<relation name="order_shipping_address_id_foreign" fq-name="public.&quot;order&quot;.order_shipping_address_id_foreign" type="fk" pk-ref="42" fk-ref="41"/>
+		<relation name="order_change_action_order_change_id_foreign" fq-name="public.order_change_action.order_change_action_order_change_id_foreign" type="fk" pk-ref="44" fk-ref="45"/>
+		<relation name="order_line_item_totals_id_foreign" fq-name="public.order_line_item.order_line_item_totals_id_foreign" type="fk" pk-ref="53" fk-ref="54"/>
+		<relation name="order_item_item_id_foreign" fq-name="public.order_item.order_item_item_id_foreign" type="fk" pk-ref="54" fk-ref="53"/>
+		<relation name="order_line_item_adjustment_item_id_foreign" fq-name="public.order_line_item_adjustment.order_line_item_adjustment_item_id_foreign" type="fk" pk-ref="54" fk-ref="55"/>
+		<relation name="order_line_item_tax_line_item_id_foreign" fq-name="public.order_line_item_tax_line.order_line_item_tax_line_item_id_foreign" type="fk" pk-ref="54" fk-ref="56"/>
+		<relation name="order_shipping_method_adjustment_shipping_method_id_foreign" fq-name="public.order_shipping_method_adjustment.order_shipping_method_adjustment_shipping_method_id_foreign" type="fk" pk-ref="60" fk-ref="61"/>
+		<relation name="order_shipping_method_tax_line_shipping_method_id_foreign" fq-name="public.order_shipping_method_tax_line.order_shipping_method_tax_line_shipping_method_id_foreign" type="fk" pk-ref="60" fk-ref="62"/>
+		<relation name="capture_payment_id_foreign" fq-name="public.capture.capture_payment_id_foreign" type="fk" pk-ref="65" fk-ref="6"/>
+		<relation name="refund_payment_id_foreign" fq-name="public.refund.refund_payment_id_foreign" type="fk" pk-ref="65" fk-ref="102"/>
+		<relation name="payment_payment_collection_id_foreign" fq-name="public.payment.payment_payment_collection_id_foreign" type="fk" pk-ref="66" fk-ref="65"/>
+		<relation name="payment_collection_payment_providers_payment_col_aa276_foreign" fq-name="public.payment_collection_payment_providers.payment_collection_payment_providers_payment_col_aa276_foreign" type="fk" pk-ref="66" fk-ref="67"/>
+		<relation name="payment_session_payment_collection_id_foreign" fq-name="public.payment_session.payment_session_payment_collection_id_foreign" type="fk" pk-ref="66" fk-ref="69"/>
+		<relation name="payment_collection_payment_providers_payment_pro_2d555_foreign" fq-name="public.payment_collection_payment_providers.payment_collection_payment_providers_payment_pro_2d555_foreign" type="fk" pk-ref="68" fk-ref="67"/>
+		<relation name="price_rule_price_id_foreign" fq-name="public.price_rule.price_rule_price_id_foreign" type="fk" pk-ref="71" fk-ref="75"/>
+		<relation name="price_price_list_id_foreign" fq-name="public.price.price_price_list_id_foreign" type="fk" pk-ref="72" fk-ref="71"/>
+		<relation name="price_list_rule_price_list_id_foreign" fq-name="public.price_list_rule.price_list_rule_price_list_id_foreign" type="fk" pk-ref="72" fk-ref="73"/>
+		<relation name="price_price_set_id_foreign" fq-name="public.price.price_price_set_id_foreign" type="fk" pk-ref="76" fk-ref="71"/>
+		<relation name="image_product_id_foreign" fq-name="public.image.image_product_id_foreign" type="fk" pk-ref="77" fk-ref="31"/>
+		<relation name="product_category_product_product_id_foreign" fq-name="public.product_category_product.product_category_product_product_id_foreign" type="fk" pk-ref="77" fk-ref="79"/>
+		<relation name="product_option_product_id_foreign" fq-name="public.product_option.product_option_product_id_foreign" type="fk" pk-ref="77" fk-ref="81"/>
+		<relation name="product_tags_product_id_foreign" fq-name="public.product_tags.product_tags_product_id_foreign" type="fk" pk-ref="77" fk-ref="87"/>
+		<relation name="product_variant_product_id_foreign" fq-name="public.product_variant.product_variant_product_id_foreign" type="fk" pk-ref="77" fk-ref="89"/>
+		<relation name="product_category_parent_category_id_foreign" fq-name="public.product_category.product_category_parent_category_id_foreign" type="fk" pk-ref="78" fk-ref="78">
+			<bend type="rel" x="2428" y="3496"/>
+			<bend type="rel" x="2465" y="3478"/>
+			<bend type="rel" x="2465" y="3442"/>
+			<bend type="rel" x="2428" y="3424"/>
+		</relation>
+		<relation name="product_category_product_product_category_id_foreign" fq-name="public.product_category_product.product_category_product_product_category_id_foreign" type="fk" pk-ref="78" fk-ref="79"/>
+		<relation name="product_collection_id_foreign" fq-name="public.product.product_collection_id_foreign" type="fk" pk-ref="80" fk-ref="77"/>
+		<relation name="product_option_value_option_id_foreign" fq-name="public.product_option_value.product_option_value_option_id_foreign" type="fk" pk-ref="81" fk-ref="82"/>
+		<relation name="product_variant_option_option_value_id_foreign" fq-name="public.product_variant_option.product_variant_option_option_value_id_foreign" type="fk" pk-ref="82" fk-ref="91"/>
+		<relation name="product_tags_product_tag_id_foreign" fq-name="public.product_tags.product_tags_product_tag_id_foreign" type="fk" pk-ref="86" fk-ref="87"/>
+		<relation name="product_type_id_foreign" fq-name="public.product.product_type_id_foreign" type="fk" pk-ref="88" fk-ref="77"/>
+		<relation name="product_variant_option_variant_id_foreign" fq-name="public.product_variant_option.product_variant_option_variant_id_foreign" type="fk" pk-ref="89" fk-ref="91"/>
+		<relation name="promotion_application_method_promotion_id_foreign" fq-name="public.promotion_application_method.promotion_application_method_promotion_id_foreign" type="fk" pk-ref="93" fk-ref="94"/>
+		<relation name="promotion_promotion_rule_promotion_id_foreign" fq-name="public.promotion_promotion_rule.promotion_promotion_rule_promotion_id_foreign" type="fk" pk-ref="93" fk-ref="97"/>
+		<relation name="application_method_buy_rules_application_method_id_foreign" fq-name="public.application_method_buy_rules.application_method_buy_rules_application_method_id_foreign" type="fk" pk-ref="94" fk-ref="3"/>
+		<relation name="application_method_target_rules_application_method_id_foreign" fq-name="public.application_method_target_rules.application_method_target_rules_application_method_id_foreign" type="fk" pk-ref="94" fk-ref="4"/>
+		<relation name="promotion_campaign_id_foreign" fq-name="public.promotion.promotion_campaign_id_foreign" type="fk" pk-ref="95" fk-ref="93"/>
+		<relation name="promotion_campaign_budget_campaign_id_foreign" fq-name="public.promotion_campaign_budget.promotion_campaign_budget_campaign_id_foreign" type="fk" pk-ref="95" fk-ref="96"/>
+		<relation name="application_method_buy_rules_promotion_rule_id_foreign" fq-name="public.application_method_buy_rules.application_method_buy_rules_promotion_rule_id_foreign" type="fk" pk-ref="98" fk-ref="3"/>
+		<relation name="application_method_target_rules_promotion_rule_id_foreign" fq-name="public.application_method_target_rules.application_method_target_rules_promotion_rule_id_foreign" type="fk" pk-ref="98" fk-ref="4"/>
+		<relation name="promotion_promotion_rule_promotion_rule_id_foreign" fq-name="public.promotion_promotion_rule.promotion_promotion_rule_promotion_rule_id_foreign" type="fk" pk-ref="98" fk-ref="97"/>
+		<relation name="promotion_rule_value_promotion_rule_id_foreign" fq-name="public.promotion_rule_value.promotion_rule_value_promotion_rule_id_foreign" type="fk" pk-ref="98" fk-ref="99"/>
+		<relation name="region_country_region_id_foreign" fq-name="public.region_country.region_country_region_id_foreign" type="fk" pk-ref="104" fk-ref="105"/>
+		<relation name="return_reason_parent_return_reason_id_foreign" fq-name="public.return_reason.return_reason_parent_return_reason_id_foreign" type="fk" pk-ref="111" fk-ref="111">
+			<bend type="rel" x="2284" y="4872"/>
+			<bend type="rel" x="2327" y="4851"/>
+			<bend type="rel" x="2327" y="4809"/>
+			<bend type="rel" x="2284" y="4787"/>
+		</relation>
+		<relation name="geo_zone_service_zone_id_foreign" fq-name="public.geo_zone.geo_zone_service_zone_id_foreign" type="fk" pk-ref="115" fk-ref="30"/>
+		<relation name="shipping_option_service_zone_id_foreign" fq-name="public.shipping_option.shipping_option_service_zone_id_foreign" type="fk" pk-ref="115" fk-ref="116"/>
+		<relation name="fulfillment_shipping_option_id_foreign" fq-name="public.fulfillment.fulfillment_shipping_option_id_foreign" type="fk" pk-ref="116" fk-ref="24"/>
+		<relation name="shipping_option_rule_shipping_option_id_foreign" fq-name="public.shipping_option_rule.shipping_option_rule_shipping_option_id_foreign" type="fk" pk-ref="116" fk-ref="118"/>
+		<relation name="shipping_option_shipping_option_type_id_foreign" fq-name="public.shipping_option.shipping_option_shipping_option_type_id_foreign" type="fk" pk-ref="119" fk-ref="116"/>
+		<relation name="shipping_option_shipping_profile_id_foreign" fq-name="public.shipping_option.shipping_option_shipping_profile_id_foreign" type="fk" pk-ref="120" fk-ref="116"/>
+		<relation name="stock_location_address_id_foreign" fq-name="public.stock_location.stock_location_address_id_foreign" type="fk" pk-ref="122" fk-ref="121"/>
+		<relation name="store_currency_store_id_foreign" fq-name="public.store_currency.store_currency_store_id_foreign" type="fk" pk-ref="123" fk-ref="124"/>
+		<relation name="FK_tax_region_provider_id" fq-name="public.tax_region.&quot;FK_tax_region_provider_id&quot;" type="fk" pk-ref="125" fk-ref="128"/>
+		<relation name="FK_tax_rate_rule_tax_rate_id" fq-name="public.tax_rate_rule.&quot;FK_tax_rate_rule_tax_rate_id&quot;" type="fk" pk-ref="126" fk-ref="127"/>
+		<relation name="FK_tax_rate_tax_region_id" fq-name="public.tax_rate.&quot;FK_tax_rate_tax_region_id&quot;" type="fk" pk-ref="128" fk-ref="126"/>
+		<relation name="FK_tax_region_parent_id" fq-name="public.tax_region.&quot;FK_tax_region_parent_id&quot;" type="fk" pk-ref="128" fk-ref="128">
+			<bend type="rel" x="858" y="9303"/>
+			<bend type="rel" x="888" y="9288"/>
+			<bend type="rel" x="888" y="9258"/>
+			<bend type="rel" x="858" y="9242"/>
+		</relation>
+	</relations>
+</diagram>
