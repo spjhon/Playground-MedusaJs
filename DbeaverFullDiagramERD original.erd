@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<diagram version="1" name="DbeaverFullDiagramERD.erd">
+<diagram version="1" name="DbeaverFullDiagramERD original.erd">
 	<entities>
 		<data-source id="postgres-jdbc-196fd7edc2c-7030cf89bff75be4">
 			<entity id="1" name="account_holder" fq-name="public.account_holder" order="0" color-bg="64,128,128" x="5721" y="1783">
@@ -82,7 +82,7 @@
 				<path name="public"/>
 				<path name="postgres"/>
 			</entity>
-			<entity id="21" name="customer_address" fq-name="public.customer_address" order="21" color-bg="255,255,0" x="3803" y="2074">
+			<entity id="21" name="customer_address" fq-name="public.customer_address" order="21" color-bg="255,255,0" x="4397" y="2751">
 				<path name="public"/>
 				<path name="postgres"/>
 			</entity>
@@ -126,7 +126,7 @@
 				<path name="public"/>
 				<path name="postgres"/>
 			</entity>
-			<entity id="32" name="inventory_item" fq-name="public.inventory_item" order="32" color-bg="255,0,0" border-width="3" x="116" y="5157">
+			<entity id="32" name="inventory_item" fq-name="public.inventory_item" order="32" color-bg="255,0,0" x="116" y="5157">
 				<path name="public"/>
 				<path name="postgres"/>
 			</entity>
@@ -142,7 +142,7 @@
 				<path name="public"/>
 				<path name="postgres"/>
 			</entity>
-			<entity id="36" name="location_fulfillment_provider" fq-name="public.location_fulfillment_provider" order="36" x="1256" y="4278">
+			<entity id="36" name="location_fulfillment_provider" fq-name="public.location_fulfillment_provider" order="36" x="1418" y="4540">
 				<path name="public"/>
 				<path name="postgres"/>
 			</entity>
@@ -342,7 +342,7 @@
 				<path name="public"/>
 				<path name="postgres"/>
 			</entity>
-			<entity id="86" name="product_tag" fq-name="public.product_tag" order="86" color-bg="0,128,64" x="-777" y="971">
+			<entity id="86" name="product_tag" fq-name="public.product_tag" order="86" color-bg="0,128,64" x="-723" y="1021">
 				<path name="public"/>
 				<path name="postgres"/>
 			</entity>
@@ -358,7 +358,7 @@
 				<path name="public"/>
 				<path name="postgres"/>
 			</entity>
-			<entity id="90" name="product_variant_inventory_item" fq-name="public.product_variant_inventory_item" order="90" x="925" y="3457">
+			<entity id="90" name="product_variant_inventory_item" fq-name="public.product_variant_inventory_item" order="90" x="1415" y="3427">
 				<path name="public"/>
 				<path name="postgres"/>
 			</entity>
@@ -370,7 +370,7 @@
 				<path name="public"/>
 				<path name="postgres"/>
 			</entity>
-			<entity id="93" name="promotion" fq-name="public.promotion" order="93" color-bg="255,128,64" x="2352" y="4149">
+			<entity id="93" name="promotion" fq-name="public.promotion" order="93" color-bg="255,128,64" x="2280" y="4117">
 				<path name="public"/>
 				<path name="postgres"/>
 			</entity>
@@ -386,7 +386,7 @@
 				<path name="public"/>
 				<path name="postgres"/>
 			</entity>
-			<entity id="97" name="promotion_promotion_rule" fq-name="public.promotion_promotion_rule" order="97" color-bg="255,128,64" x="2903" y="3865">
+			<entity id="97" name="promotion_promotion_rule" fq-name="public.promotion_promotion_rule" order="97" color-bg="255,128,64" x="3151" y="3537">
 				<path name="public"/>
 				<path name="postgres"/>
 			</entity>
@@ -394,7 +394,7 @@
 				<path name="public"/>
 				<path name="postgres"/>
 			</entity>
-			<entity id="99" name="promotion_rule_value" fq-name="public.promotion_rule_value" order="99" color-bg="255,128,64" x="3695" y="3651">
+			<entity id="99" name="promotion_rule_value" fq-name="public.promotion_rule_value" order="99" color-bg="255,128,64" x="3151" y="3681">
 				<path name="public"/>
 				<path name="postgres"/>
 			</entity>
@@ -414,11 +414,11 @@
 				<path name="public"/>
 				<path name="postgres"/>
 			</entity>
-			<entity id="104" name="region" fq-name="public.region" order="104" color-bg="128,0,0" x="3130" y="2993">
+			<entity id="104" name="region" fq-name="public.region" order="104" color-bg="128,0,0" x="3310" y="3103">
 				<path name="public"/>
 				<path name="postgres"/>
 			</entity>
-			<entity id="105" name="region_country" fq-name="public.region_country" order="105" color-bg="128,0,0" x="2868" y="3009">
+			<entity id="105" name="region_country" fq-name="public.region_country" order="105" color-bg="128,0,0" x="3048" y="3119">
 				<path name="public"/>
 				<path name="postgres"/>
 			</entity>
@@ -541,10 +541,10 @@
 		<relation name="vfk_publishable_api_key_sales_channel_api_key_30345" type="vfk" pk-ref="2" fk-ref="101"/>
 		<relation name="provider_identity_auth_identity_id_foreign" fq-name="public.provider_identity.provider_identity_auth_identity_id_foreign" type="fk" pk-ref="5" fk-ref="100"/>
 		<relation name="cart_line_item_cart_id_foreign" fq-name="public.cart_line_item.cart_line_item_cart_id_foreign" type="fk" pk-ref="7" fk-ref="9"/>
-		<relation name="vfk_cart_payment_collection_cart_30100" type="vfk" pk-ref="7" fk-ref="12"/>
 		<relation name="cart_shipping_method_cart_id_foreign" fq-name="public.cart_shipping_method.cart_shipping_method_cart_id_foreign" type="fk" pk-ref="7" fk-ref="14"/>
 		<relation name="credit_line_cart_id_foreign" fq-name="public.credit_line.credit_line_cart_id_foreign" type="fk" pk-ref="7" fk-ref="17"/>
 		<relation name="vfk_order_cart_cart_30100" type="vfk" pk-ref="7" fk-ref="43"/>
+		<relation name="vfk_cart_payment_collection_cart_30100" type="vfk" pk-ref="7" fk-ref="12"/>
 		<relation name="cart_billing_address_id_foreign" fq-name="public.cart.cart_billing_address_id_foreign" type="fk" pk-ref="8" fk-ref="7"/>
 		<relation name="cart_shipping_address_id_foreign" fq-name="public.cart.cart_shipping_address_id_foreign" type="fk" pk-ref="8" fk-ref="7"/>
 		<relation name="vfk_cart_promotion_cart_address_30115" type="vfk" pk-ref="8" fk-ref="13"/>
@@ -559,10 +559,10 @@
     Desde una Store puedes ver qué Currencies acepta.
 
     Desde una Currency no puedes consultar qué Stores la usan. -&gt; currency" type="erdkey" pk-ref="18" fk-ref="132"/>
-		<relation name="vfk_cart_customer_30012" type="vfk" pk-ref="19" fk-ref="7"/>
-		<relation name="vfk_customer_account_holder_customer_30012" type="vfk" pk-ref="19" fk-ref="20"/>
 		<relation name="customer_address_customer_id_foreign" fq-name="public.customer_address.customer_address_customer_id_foreign" type="fk" pk-ref="19" fk-ref="21"/>
 		<relation name="customer_group_customer_customer_id_foreign" fq-name="public.customer_group_customer.customer_group_customer_customer_id_foreign" type="fk" pk-ref="19" fk-ref="23"/>
+		<relation name="vfk_cart_customer_30012" type="vfk" pk-ref="19" fk-ref="7"/>
+		<relation name="vfk_customer_account_holder_customer_30012" type="vfk" pk-ref="19" fk-ref="20"/>
 		<relation name="vfk_order_customer_30012" type="vfk" pk-ref="19" fk-ref="41"/>
 		<relation name="customer_group_customer_customer_group_id_foreign" fq-name="public.customer_group_customer.customer_group_customer_customer_group_id_foreign" type="fk" pk-ref="22" fk-ref="23"/>
 		<relation name="fulfillment_item_fulfillment_id_foreign" fq-name="public.fulfillment_item.fulfillment_item_fulfillment_id_foreign" type="fk" pk-ref="24" fk-ref="26"/>
@@ -571,23 +571,23 @@
 		<relation name="vfk_return_fulfillment_fulfillment_31290" type="vfk" pk-ref="24" fk-ref="109"/>
 		<relation name="fulfillment_delivery_address_id_foreign" fq-name="public.fulfillment.fulfillment_delivery_address_id_foreign" type="fk" pk-ref="25" fk-ref="24"/>
 		<relation name="fulfillment_provider_id_foreign" fq-name="public.fulfillment.fulfillment_provider_id_foreign" type="fk" pk-ref="28" fk-ref="24"/>
-		<relation name="vfk_location_fulfillment_provider_fulfillment_provider_31192" type="vfk" pk-ref="28" fk-ref="36"/>
 		<relation name="shipping_option_provider_id_foreign" fq-name="public.shipping_option.shipping_option_provider_id_foreign" type="fk" pk-ref="28" fk-ref="116"/>
-		<relation name="vfk_location_fulfillment_set_fulfillment_set_31200" type="vfk" pk-ref="29" fk-ref="37"/>
+		<relation name="vfk_location_fulfillment_provider_fulfillment_provider_31192" type="vfk" pk-ref="28" fk-ref="36"/>
 		<relation name="service_zone_fulfillment_set_id_foreign" fq-name="public.service_zone.service_zone_fulfillment_set_id_foreign" type="fk" pk-ref="29" fk-ref="115"/>
+		<relation name="vfk_location_fulfillment_set_fulfillment_set_31200" type="vfk" pk-ref="29" fk-ref="37"/>
 		<relation name="inventory_level_inventory_item_id_foreign" fq-name="public.inventory_level.inventory_level_inventory_item_id_foreign" type="fk" pk-ref="32" fk-ref="33"/>
-		<relation name="vfk_product_variant_inventory_item_inventory_item_29155" type="vfk" pk-ref="32" fk-ref="90"/>
 		<relation name="reservation_item_inventory_item_id_foreign" fq-name="public.reservation_item.reservation_item_inventory_item_id_foreign" type="fk" pk-ref="32" fk-ref="107"/>
+		<relation name="vfk_product_variant_inventory_item_inventory_item_29155" type="vfk" pk-ref="32" fk-ref="90"/>
 		<relation name="notification_provider_id_foreign" fq-name="public.notification.notification_provider_id_foreign" type="fk" pk-ref="40" fk-ref="39"/>
-		<relation name="vfk_order_cart_order_30660" type="vfk" pk-ref="41" fk-ref="43"/>
 		<relation name="order_change_order_id_foreign" fq-name="public.order_change.order_change_order_id_foreign" type="fk" pk-ref="41" fk-ref="44"/>
 		<relation name="order_credit_line_order_id_foreign" fq-name="public.order_credit_line.order_credit_line_order_id_foreign" type="fk" pk-ref="41" fk-ref="49"/>
-		<relation name="vfk_order_fulfillment_order_30660" type="vfk" pk-ref="41" fk-ref="52"/>
 		<relation name="order_item_order_id_foreign" fq-name="public.order_item.order_item_order_id_foreign" type="fk" pk-ref="41" fk-ref="53"/>
-		<relation name="vfk_order_payment_collection_order_30660" type="vfk" pk-ref="41" fk-ref="57"/>
-		<relation name="vfk_order_promotion_order_30660" type="vfk" pk-ref="41" fk-ref="58"/>
 		<relation name="order_shipping_order_id_foreign" fq-name="public.order_shipping.order_shipping_order_id_foreign" type="fk" pk-ref="41" fk-ref="59"/>
 		<relation name="order_transaction_order_id_foreign" fq-name="public.order_transaction.order_transaction_order_id_foreign" type="fk" pk-ref="41" fk-ref="64"/>
+		<relation name="vfk_order_cart_order_30660" type="vfk" pk-ref="41" fk-ref="43"/>
+		<relation name="vfk_order_fulfillment_order_30660" type="vfk" pk-ref="41" fk-ref="52"/>
+		<relation name="vfk_order_payment_collection_order_30660" type="vfk" pk-ref="41" fk-ref="57"/>
+		<relation name="vfk_order_promotion_order_30660" type="vfk" pk-ref="41" fk-ref="58"/>
 		<relation name="order_billing_address_id_foreign" fq-name="public.&quot;order&quot;.order_billing_address_id_foreign" type="fk" pk-ref="42" fk-ref="41"/>
 		<relation name="order_shipping_address_id_foreign" fq-name="public.&quot;order&quot;.order_shipping_address_id_foreign" type="fk" pk-ref="42" fk-ref="41"/>
 		<relation name="order_change_action_order_change_id_foreign" fq-name="public.order_change_action.order_change_action_order_change_id_foreign" type="fk" pk-ref="44" fk-ref="45"/>
@@ -599,33 +599,33 @@
 		<relation name="order_shipping_method_tax_line_shipping_method_id_foreign" fq-name="public.order_shipping_method_tax_line.order_shipping_method_tax_line_shipping_method_id_foreign" type="fk" pk-ref="60" fk-ref="62"/>
 		<relation name="capture_payment_id_foreign" fq-name="public.capture.capture_payment_id_foreign" type="fk" pk-ref="65" fk-ref="6"/>
 		<relation name="refund_payment_id_foreign" fq-name="public.refund.refund_payment_id_foreign" type="fk" pk-ref="65" fk-ref="102"/>
-		<relation name="vfk_cart_payment_collection_payment_collection_30478" type="vfk" pk-ref="66" fk-ref="12"/>
-		<relation name="vfk_order_payment_collection_payment_collection_30478" type="vfk" pk-ref="66" fk-ref="57"/>
 		<relation name="payment_payment_collection_id_foreign" fq-name="public.payment.payment_payment_collection_id_foreign" type="fk" pk-ref="66" fk-ref="65"/>
 		<relation name="payment_collection_payment_providers_payment_col_aa276_foreign" fq-name="public.payment_collection_payment_providers.payment_collection_payment_providers_payment_col_aa276_foreign" type="fk" pk-ref="66" fk-ref="67"/>
 		<relation name="payment_session_payment_collection_id_foreign" fq-name="public.payment_session.payment_session_payment_collection_id_foreign" type="fk" pk-ref="66" fk-ref="69"/>
+		<relation name="vfk_cart_payment_collection_payment_collection_30478" type="vfk" pk-ref="66" fk-ref="12"/>
+		<relation name="vfk_order_payment_collection_payment_collection_30478" type="vfk" pk-ref="66" fk-ref="57"/>
 		<relation name="payment_collection_payment_providers_payment_pro_2d555_foreign" fq-name="public.payment_collection_payment_providers.payment_collection_payment_providers_payment_pro_2d555_foreign" type="fk" pk-ref="68" fk-ref="67"/>
 		<relation name="vfk_region_payment_provider_payment_provider_30498" type="vfk" pk-ref="68" fk-ref="106"/>
 		<relation name="price_rule_price_id_foreign" fq-name="public.price_rule.price_rule_price_id_foreign" type="fk" pk-ref="71" fk-ref="75"/>
 		<relation name="price_price_list_id_foreign" fq-name="public.price.price_price_list_id_foreign" type="fk" pk-ref="72" fk-ref="71"/>
 		<relation name="price_list_rule_price_list_id_foreign" fq-name="public.price_list_rule.price_list_rule_price_list_id_foreign" type="fk" pk-ref="72" fk-ref="73"/>
 		<relation name="price_price_set_id_foreign" fq-name="public.price.price_price_set_id_foreign" type="fk" pk-ref="76" fk-ref="71"/>
-		<relation name="vfk_product_variant_price_set_price_set_29569" type="vfk" pk-ref="76" fk-ref="92"/>
 		<relation name="vfk_shipping_option_price_set_price_set_29569" type="vfk" pk-ref="76" fk-ref="117"/>
-		<relation name="vfk_cart_line_item_product_29258" type="vfk" pk-ref="77" fk-ref="9"/>
+		<relation name="vfk_product_variant_price_set_price_set_29569" type="vfk" pk-ref="76" fk-ref="92"/>
 		<relation name="image_product_id_foreign" fq-name="public.image.image_product_id_foreign" type="fk" pk-ref="77" fk-ref="31"/>
-		<relation name="vfk_order_line_item_product_29258" type="vfk" pk-ref="77" fk-ref="54"/>
 		<relation name="product_category_product_product_id_foreign" fq-name="public.product_category_product.product_category_product_product_id_foreign" type="fk" pk-ref="77" fk-ref="79"/>
 		<relation name="product_option_product_id_foreign" fq-name="public.product_option.product_option_product_id_foreign" type="fk" pk-ref="77" fk-ref="81"/>
-		<relation name="vfk_product_sales_channel_product_29258" type="vfk" pk-ref="77" fk-ref="84"/>
-		<relation name="vfk_product_shipping_profile_product_29258" type="vfk" pk-ref="77" fk-ref="85"/>
 		<relation name="product_tags_product_id_foreign" fq-name="public.product_tags.product_tags_product_id_foreign" type="fk" pk-ref="77" fk-ref="87"/>
 		<relation name="product_variant_product_id_foreign" fq-name="public.product_variant.product_variant_product_id_foreign" type="fk" pk-ref="77" fk-ref="89"/>
+		<relation name="vfk_cart_line_item_product_29258" type="vfk" pk-ref="77" fk-ref="9"/>
+		<relation name="vfk_product_shipping_profile_product_29258" type="vfk" pk-ref="77" fk-ref="85"/>
+		<relation name="vfk_order_line_item_product_29258" type="vfk" pk-ref="77" fk-ref="54"/>
+		<relation name="vfk_product_sales_channel_product_29258" type="vfk" pk-ref="77" fk-ref="84"/>
 		<relation name="product_category_parent_category_id_foreign" fq-name="public.product_category.product_category_parent_category_id_foreign" type="fk" pk-ref="78" fk-ref="78">
-			<bend type="rel" x="255" y="1170"/>
-			<bend type="rel" x="306" y="1145"/>
-			<bend type="rel" x="306" y="1095"/>
-			<bend type="rel" x="255" y="1069"/>
+			<bend type="rel" x="252" y="1170"/>
+			<bend type="rel" x="303" y="1145"/>
+			<bend type="rel" x="303" y="1095"/>
+			<bend type="rel" x="252" y="1069"/>
 		</relation>
 		<relation name="product_category_product_product_category_id_foreign" fq-name="public.product_category_product.product_category_product_product_category_id_foreign" type="fk" pk-ref="78" fk-ref="79"/>
 		<relation name="product_collection_id_foreign" fq-name="public.product.product_collection_id_foreign" type="fk" pk-ref="80" fk-ref="77"/>
@@ -633,53 +633,50 @@
 		<relation name="product_variant_option_option_value_id_foreign" fq-name="public.product_variant_option.product_variant_option_option_value_id_foreign" type="fk" pk-ref="82" fk-ref="91"/>
 		<relation name="product_tags_product_tag_id_foreign" fq-name="public.product_tags.product_tags_product_tag_id_foreign" type="fk" pk-ref="86" fk-ref="87"/>
 		<relation name="product_type_id_foreign" fq-name="public.product.product_type_id_foreign" type="fk" pk-ref="88" fk-ref="77"/>
+		<relation name="product_variant_option_variant_id_foreign" fq-name="public.product_variant_option.product_variant_option_variant_id_foreign" type="fk" pk-ref="89" fk-ref="91"/>
 		<relation name="vfk_cart_line_item_product_variant_29274" type="vfk" pk-ref="89" fk-ref="9"/>
 		<relation name="vfk_product_variant_inventory_item_product_variant_29274" type="vfk" pk-ref="89" fk-ref="90"/>
-		<relation name="product_variant_option_variant_id_foreign" fq-name="public.product_variant_option.product_variant_option_variant_id_foreign" type="fk" pk-ref="89" fk-ref="91"/>
 		<relation name="vfk_product_variant_price_set_product_variant_29274" type="vfk" pk-ref="89" fk-ref="92"/>
-		<relation name="vfk_cart_line_item_adjustment_promotion_29825" type="vfk" pk-ref="93" fk-ref="10"/>
-		<relation name="vfk_cart_promotion_promotion_29825" type="vfk" pk-ref="93" fk-ref="13"/>
-		<relation name="vfk_order_promotion_promotion_29825" type="vfk" pk-ref="93" fk-ref="58"/>
 		<relation name="promotion_application_method_promotion_id_foreign" fq-name="public.promotion_application_method.promotion_application_method_promotion_id_foreign" type="fk" pk-ref="93" fk-ref="94"/>
 		<relation name="promotion_promotion_rule_promotion_id_foreign" fq-name="public.promotion_promotion_rule.promotion_promotion_rule_promotion_id_foreign" type="fk" pk-ref="93" fk-ref="97"/>
+		<relation name="vfk_cart_promotion_promotion_29825" type="vfk" pk-ref="93" fk-ref="13"/>
+		<relation name="vfk_order_promotion_promotion_29825" type="vfk" pk-ref="93" fk-ref="58"/>
+		<relation name="vfk_cart_line_item_adjustment_promotion_29825" type="vfk" pk-ref="93" fk-ref="10"/>
 		<relation name="application_method_buy_rules_application_method_id_foreign" fq-name="public.application_method_buy_rules.application_method_buy_rules_application_method_id_foreign" type="fk" pk-ref="94" fk-ref="3"/>
 		<relation name="application_method_target_rules_application_method_id_foreign" fq-name="public.application_method_target_rules.application_method_target_rules_application_method_id_foreign" type="fk" pk-ref="94" fk-ref="4"/>
-		<relation name="vfk_cart_promotion_promotion_campaign_29800" type="vfk" pk-ref="95" fk-ref="13"/>
 		<relation name="promotion_campaign_id_foreign" fq-name="public.promotion.promotion_campaign_id_foreign" type="fk" pk-ref="95" fk-ref="93"/>
 		<relation name="promotion_campaign_budget_campaign_id_foreign" fq-name="public.promotion_campaign_budget.promotion_campaign_budget_campaign_id_foreign" type="fk" pk-ref="95" fk-ref="96"/>
 		<relation name="application_method_buy_rules_promotion_rule_id_foreign" fq-name="public.application_method_buy_rules.application_method_buy_rules_promotion_rule_id_foreign" type="fk" pk-ref="98" fk-ref="3"/>
 		<relation name="application_method_target_rules_promotion_rule_id_foreign" fq-name="public.application_method_target_rules.application_method_target_rules_promotion_rule_id_foreign" type="fk" pk-ref="98" fk-ref="4"/>
 		<relation name="promotion_promotion_rule_promotion_rule_id_foreign" fq-name="public.promotion_promotion_rule.promotion_promotion_rule_promotion_rule_id_foreign" type="fk" pk-ref="98" fk-ref="97"/>
 		<relation name="promotion_rule_value_promotion_rule_id_foreign" fq-name="public.promotion_rule_value.promotion_rule_value_promotion_rule_id_foreign" type="fk" pk-ref="98" fk-ref="99"/>
-		<relation name="vfk_product_variant_price_set_publishable_api_key_sales_channel_31620" type="vfk" pk-ref="101" fk-ref="92"/>
+		<relation name="region_country_region_id_foreign" fq-name="public.region_country.region_country_region_id_foreign" type="fk" pk-ref="104" fk-ref="105"/>
 		<relation name="vfk_cart_region_30317" type="vfk" pk-ref="104" fk-ref="7"/>
 		<relation name="vfk_order_region_30317" type="vfk" pk-ref="104" fk-ref="41"/>
-		<relation name="region_country_region_id_foreign" fq-name="public.region_country.region_country_region_id_foreign" type="fk" pk-ref="104" fk-ref="105"/>
 		<relation name="vfk_region_payment_provider_region_30317" type="vfk" pk-ref="104" fk-ref="106"/>
 		<relation name="vfk_return_fulfillment_return_30948" type="vfk" pk-ref="108" fk-ref="109"/>
 		<relation name="return_reason_parent_return_reason_id_foreign" fq-name="public.return_reason.return_reason_parent_return_reason_id_foreign" type="fk" pk-ref="111" fk-ref="111">
-			<bend type="rel" x="8181" y="3800"/>
-			<bend type="rel" x="8239" y="3771"/>
-			<bend type="rel" x="8239" y="3714"/>
-			<bend type="rel" x="8181" y="3686"/>
+			<bend type="rel" x="8181" y="3797"/>
+			<bend type="rel" x="8239" y="3768"/>
+			<bend type="rel" x="8239" y="3711"/>
+			<bend type="rel" x="8181" y="3683"/>
 		</relation>
+		<relation name="vfk_publishable_api_key_sales_channel_sales_channel_30089" type="vfk" pk-ref="112" fk-ref="101"/>
 		<relation name="vfk_cart_sales_channel_30089" type="vfk" pk-ref="112" fk-ref="7"/>
 		<relation name="vfk_order_sales_channel_30089" type="vfk" pk-ref="112" fk-ref="41"/>
 		<relation name="vfk_product_sales_channel_sales_channel_30089" type="vfk" pk-ref="112" fk-ref="84"/>
-		<relation name="vfk_publishable_api_key_sales_channel_sales_channel_30089" type="vfk" pk-ref="112" fk-ref="101"/>
 		<relation name="vfk_sales_channel_stock_location_sales_channel_30089" type="vfk" pk-ref="112" fk-ref="113"/>
 		<relation name="geo_zone_service_zone_id_foreign" fq-name="public.geo_zone.geo_zone_service_zone_id_foreign" type="fk" pk-ref="115" fk-ref="30"/>
 		<relation name="shipping_option_service_zone_id_foreign" fq-name="public.shipping_option.shipping_option_service_zone_id_foreign" type="fk" pk-ref="115" fk-ref="116"/>
 		<relation name="fulfillment_shipping_option_id_foreign" fq-name="public.fulfillment.fulfillment_shipping_option_id_foreign" type="fk" pk-ref="116" fk-ref="24"/>
-		<relation name="vfk_shipping_option_price_set_shipping_option_31260" type="vfk" pk-ref="116" fk-ref="117"/>
 		<relation name="shipping_option_rule_shipping_option_id_foreign" fq-name="public.shipping_option_rule.shipping_option_rule_shipping_option_id_foreign" type="fk" pk-ref="116" fk-ref="118"/>
+		<relation name="vfk_shipping_option_price_set_shipping_option_31260" type="vfk" pk-ref="116" fk-ref="117"/>
 		<relation name="shipping_option_shipping_option_type_id_foreign" fq-name="public.shipping_option.shipping_option_shipping_option_type_id_foreign" type="fk" pk-ref="119" fk-ref="116"/>
-		<relation name="vfk_product_shipping_profile_shipping_profile_31249" type="vfk" pk-ref="120" fk-ref="85"/>
 		<relation name="shipping_option_shipping_profile_id_foreign" fq-name="public.shipping_option.shipping_option_shipping_profile_id_foreign" type="fk" pk-ref="120" fk-ref="116"/>
-		<relation name="vfk_inventory_level_stock_location_29131" type="vfk" pk-ref="121" fk-ref="33"/>
-		<relation name="vfk_inventory_level_stock_location_29131" type="vfk" pk-ref="121" fk-ref="33"/>
+		<relation name="vfk_product_shipping_profile_shipping_profile_31249" type="vfk" pk-ref="120" fk-ref="85"/>
 		<relation name="vfk_location_fulfillment_provider_stock_location_29131" type="vfk" pk-ref="121" fk-ref="36"/>
 		<relation name="vfk_location_fulfillment_set_stock_location_29131" type="vfk" pk-ref="121" fk-ref="37"/>
+		<relation name="vfk_inventory_level_stock_location_29131" type="vfk" pk-ref="121" fk-ref="33"/>
 		<relation name="vfk_sales_channel_stock_location_stock_location_29131" type="vfk" pk-ref="121" fk-ref="113"/>
 		<relation name="stock_location_address_id_foreign" fq-name="public.stock_location.stock_location_address_id_foreign" type="fk" pk-ref="122" fk-ref="121"/>
 		<relation name="store_currency_store_id_foreign" fq-name="public.store_currency.store_currency_store_id_foreign" type="fk" pk-ref="123" fk-ref="124"/>
@@ -693,10 +690,10 @@
 		<relation name="FK_tax_rate_rule_tax_rate_id" fq-name="public.tax_rate_rule.&quot;FK_tax_rate_rule_tax_rate_id&quot;" type="fk" pk-ref="126" fk-ref="127"/>
 		<relation name="FK_tax_rate_tax_region_id" fq-name="public.tax_rate.&quot;FK_tax_rate_tax_region_id&quot;" type="fk" pk-ref="128" fk-ref="126"/>
 		<relation name="FK_tax_region_parent_id" fq-name="public.tax_region.&quot;FK_tax_region_parent_id&quot;" type="fk" pk-ref="128" fk-ref="128">
-			<bend type="rel" x="9711" y="3148"/>
-			<bend type="rel" x="9756" y="3125"/>
-			<bend type="rel" x="9756" y="3080"/>
-			<bend type="rel" x="9711" y="3058"/>
+			<bend type="rel" x="9705" y="3145"/>
+			<bend type="rel" x="9750" y="3122"/>
+			<bend type="rel" x="9750" y="3077"/>
+			<bend type="rel" x="9705" y="3055"/>
 		</relation>
 	</relations>
 </diagram>
